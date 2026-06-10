@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <audio id="bg-music" loop></audio>
+    <video id="bg-video" autoplay loop muted playsinline></video>
+    <div id="video-overlay"></div>
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <button class="new-chat-btn" onclick="startNewChat()">+ Новый чат</button>
+            <button class="settings-btn" onclick="openSettings()" title="Настройки">⚙️</button>
+        </div>
+        <div id="chat-list"></div>
+    </div>
+    <div id="main-content">
+        <header>
+            <button id="menu-btn">☰</button>
+            <h3 id="current-chat-title">Новый чат</h3>
+            <button id="close-editor-btn" style="margin-left:auto; background:#444; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; display:none;">✕ Закрыть редактор</button>
+        </header>
+        <div id="chat"></div>
+        <div id="code-editor">
+            <div class="editor-header">
+                <span id="editor-filename" style="color:var(--accent-primary); font-weight:bold;">code.js</span>
+                <button class="copy-btn" onclick="copyEditorCode()" style="background:var(--accent-secondary); color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">📋 Копировать код</button>
+            </div>
+            <div class="editor-container">
+                <div id="line-numbers"></div>
+                <pre id="editor-code"><code id="editor-code-content"></code></pre>
+            </div>
+        </div>
+        <div id="media-status">🎵 Загрузка...</div>
+        <footer>
+            <input type="text" id="input" placeholder="Напишите сообщение..." autocomplete="off">
+            <button id="send">Отправить ↵</button>
+        </footer>
+    </div>
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">⚙️ Настройки</div>
+                <button class="modal-close" onclick="closeSettings()">×</button>
+            </div>
+            <div class="setting-item">
+                <label class="setting-label">Путь к видео фону</label>
+                <input type="text" id="video-path-input" class="setting-input" placeholder="D:/Videos/background.mp4">
+                <div class="setting-hint">Укажите полный путь к MP4 файлу для живых обоев</div>
+            </div>
+            <div class="setting-item">
+                <label class="setting-label">Путь к музыке</label>
+                <input type="text" id="music-path-input" class="setting-input" placeholder="D:/Music/song.mp3">
+                <div class="setting-hint">Укажите полный путь к MP3 файлу</div>
+            </div>
+            <button class="save-btn" onclick="saveSettings()">💾 Сохранить настройки</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+{
+  "name": "qwen-chat",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^41.5.1",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "prismjs": "^1.30.0"
+  },
+  "build": {
+    "appId": "ru.hisphere.qwenchat",
+    "productName": "Qwen Chat",
+    "icon": "build/icon.ico",
+    "win": {
+      "target": [{
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Qwen Chat",
+      "installerSidebar": "build/installer-sidebar.bmp",
+      "installerHeaderIcon": "build/icon.ico",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!.git/**/*",
+      "!build/**/*"
+    ],
+    "extraResources": [{
+      "from": "build",
+      "to": "assets",
+      "filter": [
+        "**/*"
+      ]
+    }]
+  }
+}
