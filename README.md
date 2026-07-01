@@ -68,8 +68,8 @@ Qwen Chat is an Electron-based desktop AI chat client. It brings AI-powered conv
 ### Installation
 
 ```sh
-git clone "https://github.com/danilcenkodanil89-cpu/Qwen Chat"
-cd "Qwen Chat"
+git clone "https://github.com/danilcenkodanil89-cpu/qwen-chat"
+cd "qwen-chat"
 npm install
 ```
 
@@ -83,9 +83,9 @@ npm start
 
 ## Contributing
 
-- [Report Issues](https://github.com/danilcenkodanil89-cpu/Qwen Chat/issues)
-- [Submit Pull Requests](https://github.com/danilcenkodanil89-cpu/Qwen Chat/pulls)
-- [Discussions](https://github.com/danilcenkodanil89-cpu/Qwen Chat/discussions)
+- [Report Issues](https://github.com/danilcenkodanil89-cpu/qwen-chat/issues)
+- [Submit Pull Requests](https://github.com/danilcenkodanil89-cpu/qwen-chat/pulls)
+- [Discussions](https://github.com/danilcenkodanil89-cpu/qwen-chat/discussions)
 
 ---
 
